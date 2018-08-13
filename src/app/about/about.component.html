@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title><span translate>About</span></ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-card text-center>
+    <ion-card-content>
+      <ion-card-title translate>APP_NAME</ion-card-title>
+      <p>
+        <ion-icon name="code"></ion-icon> <span translate>Version</span> {{version}}
+      </p>
+
+      <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+        <input name="sku" ngModel>
+        <button ion-button type="submit">Submit</button>
+      </form>
+
+      <!-- using form builder -->
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit2(myForm)">
+        <input [formControl]="myForm.controls['sku2']" pattern="[/a-z]">
+        <button ion-button type="submit">Submit SKu2</button>
+      </form>
+
+      <ion-card class="error" *ngIf="myForm.invalid && myForm.touched">
+        <ion-card-content> This form is not valid</ion-card-content>
+      </ion-card>
+      <ion-card color="error" *ngIf="!sku2.valid" [class.touched]="sku2.touched">
+        <ion-card-content>This sku2 is invalid, only text please</ion-card-content>
+      </ion-card>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>

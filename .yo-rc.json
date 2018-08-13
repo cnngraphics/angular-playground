@@ -1,0 +1,19 @@
+{
+  "generator-ngx-rocket": {
+    "version": "5.0.1",
+    "props": {
+      "location": "path",
+      "appName": "my playgrounf",
+      "target": [
+        "web"
+      ],
+      "pwa": false,
+      "ui": "ionic",
+      "auth": false,
+      "angulartics": false,
+      "projectName": "my-playgrounf",
+      "packageManager": "npm",
+      "mobile": []
+    }
+  }
+}
