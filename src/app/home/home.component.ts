@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit {
     console.log('Options:================');
     console.log(HttpOptions);
 
-    return this.http.post( environment.serverUrl+ 'form_quote_request/add', body, HttpOptions).subscribe( res => {
+    return this.http.post( environment.serverUrl + 'form_quote_request/add', body, HttpOptions).subscribe( res => {
       console.log( res );
     });
 

@@ -19,7 +19,7 @@ export class AboutComponent implements OnInit {
     this.myForm = fb.group(
         {
           'sku2': [
-            '',
+            'Default Value',
             Validators.required,
             // Validators.maxLength : 5
         ]

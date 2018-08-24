@@ -8,6 +8,7 @@ import { IonicApp, Nav } from 'ionic-angular';
 
 import { environment } from '@env/environment';
 import { Logger, I18nService } from '@app/core';
+import * as firebase from 'firebase';
 
 const log = new Logger('App');
 
@@ -19,6 +20,7 @@ const log = new Logger('App');
 export class AppComponent implements OnInit {
 
   @ViewChild(Nav) nav: Nav;
+  inittialzation: firebase.app.App;
 
   constructor(private router: Router,
               private activatedRoute: ActivatedRoute,
@@ -27,6 +29,13 @@ export class AppComponent implements OnInit {
               private i18nService: I18nService) { }
 
   ngOnInit() {
+    // fire firebase SDK
+    this.inittialzation = firebase.initializeApp({
+      apiKey: 'AIzaSyCWctxAcfrTk73P2TzeSsP6tOjM7WNhtEc',
+      authDomain: 'nationwide-move-management.firebaseapp.com'
+    });
+
+    console.log('Initialztion done:' + this.inittialzation);
     // Setup logger
     if (environment.production) {
       Logger.enableProductionMode();

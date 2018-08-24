@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title><span translate>Login</span></ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content text-center class="center text-center">
+    <ion-row >
+      <ion-col col-md-4>
+          <ion-card text-center>
+              <ion-card-content>
+                <ion-card-title translate>Login</ion-card-title>
+                <p>
+                  <ion-icon name="code"></ion-icon> <span translate>Version</span> {{version}}
+                </p>
+                <form #rf="ngForm" (ngSubmit)="onLogin(rf)">
+                    <ion-list>
+                        <ion-item>
+                          <ion-label fixed>Username</ion-label>
+                          <ion-input type="email" id="email" value="" name="email"ngModel></ion-input>
+                        </ion-item>
+                        <ion-item>
+                          <ion-label fixed>Password</ion-label>
+                          <ion-input type="password" name="password" id="password" ngModel></ion-input>
+                        </ion-item>
+                      </ion-list>
+                      <button ion-button class="btn btn-primary" type="submit"> Login</button>
+                </form>
+              </ion-card-content>
+            </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-content>
